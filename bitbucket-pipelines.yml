@@ -1,0 +1,20 @@
+image: node:16.15.0
+pipelines:
+  custom: # "custom" pipelines only run on-demand
+    deploy-appengine:
+      - step:
+          name: Deploy
+          caches: 
+            - node
+          script:
+            - cd frontend
+            - npm install
+            - npm run prod
+            - cd ../
+            - pipe: atlassian/google-app-engine-deploy:1.1.1
+              variables:
+                KEY_FILE: $DEPLOY_KEY_FILE
+                PROJECT: 'bgmr-gwm'
+                PROMOTE: 'true'
+                STOP_PREVIOUS_VERSION: 'true'
+                DEPLOYABLES: 'backend/app.yaml'

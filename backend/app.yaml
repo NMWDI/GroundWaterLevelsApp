@@ -1,0 +1,6 @@
+runtime: python310
+service: groundwater-map-app
+
+handlers:
+- url: /.*
+  script: auto
