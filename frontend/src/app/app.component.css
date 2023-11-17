@@ -1,0 +1,6 @@
+.content-page-regular {
+  overflow: hidden;
+  padding: 70px 12px 65px;
+  min-height: 100vh;
+  transition: all 0.1s;
+}

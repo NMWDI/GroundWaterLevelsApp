@@ -1,0 +1,23 @@
+<div class="d-flex flex-row px-2 pb-2 justify-content-md-start justify-content-center">
+    <!-- <fieldset class="form-group border px-1 pb-1"> -->
+        <!-- <legend class="fieldset-legend">Zoom To</legend> -->
+    
+        <div ngbDropdown class="d-inline-block pr-1 pr-md-2">
+            <button type="button" class="btn btn-white dropdown-toggle" ngbDropdownToggle>
+                Project Region
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu" style="z-index: 1100">
+                <button ngbDropdownItem class="dropdown-item" *ngFor="let projectRegion of projectRegions" (click)="onRegionSelected(projectRegion)">{{projectRegion.name}}</button>
+            </div>
+        </div>   
+
+        <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-white dropdown-toggle" ngbDropdownToggle>
+                County
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu" style="z-index: 1100">
+                <button ngbDropdownItem class="dropdown-item" *ngFor="let county of countyRegions" (click)="onRegionSelected(county)">{{county.name}}</button>
+            </div>
+        </div>   
+    <!-- </fieldset> -->
+</div>

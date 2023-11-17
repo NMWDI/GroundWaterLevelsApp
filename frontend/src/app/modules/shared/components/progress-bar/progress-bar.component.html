@@ -1,0 +1,7 @@
+<div class="progress-bar-outer">
+  <div *ngIf="!disableLabel" class="progress-bar-label languageOption"> {{ label }} </div>
+  <div class="progress-bar-container">
+    <div class="progress-bar-custom {{color}}" [ngStyle]="{'width': progress + '%'}"> </div>
+  </div>
+  <div *ngIf="!disableLabel" class="progress-bar-amount"> {{ progress | number: '1.1-1' }}% </div>
+</div>

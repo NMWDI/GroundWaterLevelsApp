@@ -1,0 +1,91 @@
+<div class="title-container">
+    <div class="row mx-3-md mx-1 py-2">
+        <div class="col-6">
+            <h4 class="my-0">{{modalData.PointID}}</h4>
+            <h4 class="display-6 text-muted my-0 font-weight-light">Groundwater Trend: {{modalData.Trend}}</h4>
+            <h4 class="display-6 text-muted my-0 font-weight-light">Agency: {{modalData.Agency}}</h4>
+        </div>
+        <div class="col-6">
+            <button type="button" class="close text-white" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="content-container" style="overflow: hidden;">
+    <div class="mx-xl-5 mx-1 text-center pb-3">
+        <table class="table table-sm table-centered mb-0 my-4">
+            <thead class="table-light">
+                <tr>
+                    <th>Use</th>
+                    <th>Status</th>
+                    <th>Current Depth To Water Vs Average</th>
+                    <th>Current Depth to Water</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{modalData.Use}}</td>
+                    <td>{{modalData.Status}}</td>
+                    <td>{{modalData.DiffFromMean}} ft.</td>
+                    <td>{{modalData.CurrentDepth}} ft.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            <div
+                class="collapse-header py-1 px-2 d-flex justify-content-between text-muted"
+                (click)="collapse.toggle()"
+            >
+                <span class="my-auto">Depth To Water Below Ground</span>
+                <span><i class="uil uil-angle-down collapse-arrow"></i></span>
+            </div>
+
+            <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="collapse-content border-secondary border">
+                <div class="pt-2" id="dtwLabel"></div>
+                <div class="d-flex justify-content-center">
+
+                    <!-- Options here since we want height and width values set in constructor based on window size -->
+                    <div *ngIf="dataLoaded">
+                        <ng-dygraphs
+                            [data]="dtwData"
+                            [options]="dtwOptions">
+                        </ng-dygraphs>
+                        <div class="row justify-content-center d-none d-md-block mb-2">
+                            <button class="btn btn-outline-info" (click)="downloadDtwCSV()">Download CSV</button>
+                        </div>
+                    </div>
+                    <div *ngIf="!dataLoaded">Loading Data...</div>
+                </div>
+            </div>
+
+
+        <p>
+            <div
+                class="collapse-header py-1 px-2 d-flex justify-content-between text-muted"
+                (click)="collapse2.toggle()"
+            >
+                <span class="my-auto">Depth To Water Divergence From Mean</span>
+                <span><i class="uil uil-angle-down collapse-arrow"></i></span>
+            </div>
+
+            <div #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2" class="collapse-content border-secondary border">
+                <div class="pt-2" id="dfmLabel"></div>
+                <div class="d-flex justify-content-center">
+                    <!-- Options here since we want height and width values set in constructor based on window size -->
+                    <div *ngIf="dataLoaded">
+                        <ng-dygraphs
+                            [data]="dfmData"
+                            [options]="dfmOptions">
+                        </ng-dygraphs>
+                        <div class="row justify-content-center d-none d-md-block mb-2">
+                            <button class="btn btn-outline-info" (click)="downloadDfmCSV()">Download CSV</button>
+                        </div>
+                    </div>
+                    <div *ngIf="!dataLoaded">Loading Data...</div>
+                </div>
+            </div>
+    </div>
+</div>

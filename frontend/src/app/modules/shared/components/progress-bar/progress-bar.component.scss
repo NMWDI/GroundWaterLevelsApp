@@ -1,0 +1,40 @@
+.progress-bar-outer {
+  margin-bottom: 8px;
+}
+
+.progress-bar-container {
+  background-color: #eef2f7;
+}
+
+.progress-bar-label {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  color: #838c96;
+}
+
+.progress-bar-custom {
+  height: 12px;
+  align-content: flex-end;
+}
+
+.progress-bar-custom.green {
+  background-color: #42d29d; // original hyper green (68.6 saturation)
+}
+
+.progress-bar-custom.blue {
+  background-color: #45badc; // something of a hyper blue
+}
+
+.progress-bar-custom.red {
+  background-color: #fa4f4f; // slightly more saturated "hyper red"
+}
+
+.progress-bar-custom.yellow {
+  background-color: #f9cd4e; // desaturated hyper yellow
+}
+
+.progress-bar-amount {
+  font-family: "Nunito", sans-serif;
+  color: #838c96;
+}

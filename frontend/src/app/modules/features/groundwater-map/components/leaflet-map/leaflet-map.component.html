@@ -1,0 +1,39 @@
+<div class="custom-popup" id="map" style="height: 90vh"></div>
+
+<ng-template #splashScreenContent let-modal>
+  <div class="modal-header">
+		<h4 class="modal-title">Welcome to the New Mexico Groundwater Dashboard!</h4>
+		<button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+	</div>
+	<div class="modal-body">
+    <p>
+      The need to understand and manage New Mexico’s groundwater has never been greater,
+      and one essential tool for this is a properly designed statewide network of groundwater-level monitoring wells.
+    </p>
+    <p>
+      Wells are our window into the otherwise unseen realm of groundwater. In addition to producing water,
+      groundwater-level data can also be obtained from water wells that can help us manage New Mexico’s groundwater resources.
+    </p>
+    <p>
+      This interactive map shows the locations of wells currently used for groundwater-level monitoring in New Mexico. Data are collected from a variety
+      of sources. Many of these wells are not designed for monitoring, but rather, they are active pumping wells utilized for monitoring on occasion.
+      From this map, viewers can also see water levels at wells with symbols to indicate an increasing or decreasing water level trend based on the
+      data available. Viewers can also observe locations where data are unavailable or insufficient to evaluate a trend.
+    </p>
+    <p>
+      Based on a recent data review project at the New Mexico Bureau of Geology and Mineral Resources, this map also shows ideas for locations for
+      potential new monitoring wells in ten high-priority regions in New Mexico. The network of potential new well sites was designed to represent
+      priority regions based on water use, land use, and hydrogeology. Importantly, these sites were selected to monitor changing groundwater
+      conditions with potential wells designed, drilled, and dedicated for monitoring purposes (not water production).
+    </p>
+    <p>
+      Funding for this project has been generously provided by the Thornburg Foundation. The full report on this
+      project can be found <a href="https://geoinfo.nmt.edu/publications/openfile/details.cfml?Volume=624">here</a>.
+    </p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="closeModal()">Close</button>
+	</div>
+</ng-template>

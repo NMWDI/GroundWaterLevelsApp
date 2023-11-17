@@ -1,0 +1,50 @@
+<div class="card tilebox-one mb-2">
+    <div class="card-body pt-3 pb-1 px-3">
+        <!-- <i class='uil uil-map-pin float-end'></i> -->
+        <div class="row justify-content-between float-right">
+            <button type="button" class="btn border-0 px-1 py-0"  ngbTooltip="Trends are calculated using regression analysis on monitoring wells measurements from NMBGMR and USGS where there are more than 4 observations over 2 years or at least 10 total observations. Wells with with a slope of 0.25 were considered to be “Increasing”. Wells with less than -0.25 were considered to be “Decreasing”. Others are considered to be “Steady”." triggers="click:blur" placement="left">
+                <fa-icon [icon]="infocircle" [styles]="{'stroke': 'white', 'color': '#28648a'}"></fa-icon>
+            </button>
+        </div>
+        <div class="row justify-content-between">
+            <h6 class="header-title">Groundwater Level Trends</h6>
+        </div>
+
+        <div>
+            <div class="row py-1 align-items-center">
+                <div class="col ps-0">
+                    <img src="/assets/icons/Increasing.png" style="height: 15px; width: 15px;"> &nbsp;&nbsp; <span>Increasing</span>
+                </div>
+                <div class="col-auto">
+                    34 Wells
+                </div>
+            </div>
+            <div class="row pb-1 align-items-center">
+                <div class="col ps-0">
+                    <img src="/assets/icons/Decreasing.png" style="height: 15px; width: 15px;"> &nbsp;&nbsp; <span>Decreasing</span>
+                </div>
+                <div class="col-auto">
+                    95 Wells
+                </div>
+            </div>
+            <div class="row pb-1 align-items-center">
+                <div class="col ps-0">
+                    <img src="/assets/icons/Steady.png" style="height: 10px; width: 15px;"> &nbsp;&nbsp; <span>Steady</span>
+                </div>
+                <div class="col-auto">
+                    271 Wells
+                </div>
+            </div>
+            <div class="row pb-1 align-items-center">
+                <div class="col ps-0">
+                    <img src="/assets/icons/NoTrend.png" style="height: 15px; width: 15px;"> &nbsp;&nbsp; <span>Insufficent Data</span> 
+                </div>
+                <div class="col-auto">
+                    996 Wells
+                </div>
+            </div>
+            <div class="text-center">
+            </div>
+        </div>
+    </div>
+</div>

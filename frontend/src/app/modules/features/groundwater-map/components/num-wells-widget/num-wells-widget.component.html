@@ -1,0 +1,28 @@
+<div class="card pb-0 mb-2">
+    <div class="card-body pb-0">
+        <div class="row justify-content-between float-right">
+            <button type="button" class="btn border-0 px-1 py-0" ngbTooltip="Number of wells permitted by year. These data are included in the Office of the State Engineer (OSE) Point of Diversion dataset." triggers="click:blur" placement="left">
+                <fa-icon [icon]="infocircle" [styles]="{'stroke': 'white', 'color': '#28648a'}"></fa-icon>
+            </button>
+        </div>        
+        <div class="row justify-content-between">
+            <h6 class="header-title">GROUNDWATER WELL PERMITS ISSUED BY YEAR</h6>
+        </div>
+
+        <div *ngIf="dataLoaded">
+            <div id="chart">
+                <apx-chart
+                    [series]="chartOptions.series"
+                    [chart]="chartOptions.chart"
+                    [labels]="chartOptions.labels"
+                    [responsive]="chartOptions.responsive"
+                    [legend]="chartOptions.legend"
+                    [dataLabels]="chartOptions.dataLabels"
+                    [xaxis]="chartOptions.xAxis"
+                    [yaxis]="chartOptions.yAxis"
+                ></apx-chart>
+            </div>
+        </div>
+        <div *ngIf="!dataLoaded">Loading...</div>
+    </div> 
+</div> 

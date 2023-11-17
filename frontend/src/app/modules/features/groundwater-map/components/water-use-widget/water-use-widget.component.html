@@ -1,0 +1,23 @@
+<div class="card pb-0 mb-2">
+    <div class="card-body pb-0">
+        <div class="row justify-content-between float-right">
+            <button type="button" class="btn border-0 px-1 py-0" ngbTooltip="Acre-Feet of water categorized by type of use for withdrawl of groundwater. The source of this data is the New Mexico Water Use by Categories 2015 report." triggers="click:blur" placement="left">
+                <fa-icon [icon]="infocircle" [styles]="{'stroke': 'white', 'color': '#28648a'}"></fa-icon>
+            </button>
+        </div>
+        <div class="row justify-content-between">
+            <h6 class="header-title mb-2">WATER USE (Acre-Feet)</h6>
+        </div>
+        <div id="chart">
+            <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [labels]="chartOptions.labels"
+                [legend]="chartOptions.legend"
+                [dataLabels]="chartOptions.dataLabels"
+                [tooltip]="chartOptions.toolTips"
+                [responsive]="chartOptions.responsive"
+            ></apx-chart>
+        </div>
+    </div> 
+</div> 
